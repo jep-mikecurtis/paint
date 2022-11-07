@@ -4,7 +4,9 @@ export const useStepperStore = defineStore("paint", {
     state: () => ({
         step: 1,
         history: [],
-        json: {}
+        json: {},
+        interiorGallon: 350,
+        exteriorGallon: 320,
     }),
     getters: {
 
@@ -74,7 +76,7 @@ export const useStepperStore = defineStore("paint", {
             let trim = this.json['trim'] && this.json['trim'] == true ? 1.00 : 0;
             const sqFtPrice = base + ceiling + trim;
 
-            return this.formatMoney(sqFtPrice * this.json['sqft']);
+            return this.formatMoney(sqFtPrice * this.json['sqft'], 0);
         }
     },
 });
