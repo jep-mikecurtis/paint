@@ -143,23 +143,13 @@ import { Head, Link } from '@inertiajs/inertia-vue3'
                             <p
                                 class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700"
                             >
-                                Don't let your uses guess by attaching tooltips
-                                and popoves to any element. Just make sure you
-                                enable them first via JavaScript.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque molestias quae sequi doloribus voluptatum dolorem corrupti voluptates id illum labore!
                             </p>
                             <p
                                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
                             >
-                                The kit comes with three pre-built pages to help
-                                you get started faster. You can change the text
-                                and images and you're good to go. Just make sure
-                                you enable them first via JavaScript.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus placeat doloremque perferendis commodi, deleniti quibusdam veritatis eligendi officia suscipit nesciunt magnam quia enim similique voluptate nam ipsa saepe rerum! Veritatis optio itaque, accusantium, culpa vero nemo voluptates autem explicabo velit, aliquid consequuntur impedit illo accusamus nobis. Nulla asperiores quas earum?
                             </p>
-                            <a
-                                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
-                                class="font-bold text-gray-800 mt-8"
-                                >Check Tailwind Starter Kit!</a
-                            >
                         </div>
                         <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
                             <div
