@@ -4,9 +4,7 @@ export const useStepperStore = defineStore("paint", {
     state: () => ({
         step: 1,
         history: [],
-        json: {
-            "perSqFt": 1.75
-        }
+        json: {}
     }),
     getters: {
 
@@ -30,7 +28,6 @@ export const useStepperStore = defineStore("paint", {
         },
 
         calcVal(key) {
-            console.log(key)
             return this.json[key] ? this.json[key] : null;
         },
 
@@ -41,6 +38,43 @@ export const useStepperStore = defineStore("paint", {
         goBack() {
             this.step = this.history[this.history.length - 1];
             this.history.pop();
+        },
+
+        formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+            try {
+                decimalCount = Math.abs(decimalCount);
+                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+                const negativeSign = amount < 0 ? "-" : "";
+
+                let i = parseInt(
+                    (amount = Math.abs(Number(amount) || 0).toFixed(decimalCount))
+                ).toString();
+                let j = i.length > 3 ? i.length % 3 : 0;
+
+                return (
+                    negativeSign +
+                    (j ? i.substr(0, j) + thousands : "") +
+                    i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
+                    (decimalCount
+                        ? decimal +
+                        Math.abs(amount - i)
+                            .toFixed(decimalCount)
+                            .slice(2)
+                        : "")
+                );
+            } catch (e) {
+                console.log(e);
+            }
+        },
+
+        getPrice() {
+            let base = 1.75;
+            let ceiling = this.json['ceiling'] && this.json['ceiling'] == true ? 1.00 : 0;
+            let trim = this.json['trim'] && this.json['trim'] == true ? 1.00 : 0;
+            const sqFtPrice = base + ceiling + trim;
+
+            return this.formatMoney(sqFtPrice * this.json['sqft']);
         }
     },
 });
