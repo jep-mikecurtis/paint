@@ -25,7 +25,7 @@ import { Head, Link } from '@inertiajs/inertia-vue3'
                         <div
                             class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center"
                         >
-                            <div class="pr-12">
+                            <div class="lg:pr-12">
                                 <h1 class="text-white font-semibold text-5xl">
                                     Curtis & Sons
                                 </h1>
