@@ -73,8 +73,8 @@
             <input class="flex-1 text-sm p-1" type="text" :value="stepperStore.calcVal('customer_name')" @input="stepperStore.setValue('customer_name', $event.target.value)">
             <label for="customer_email">Email</label>
             <input class="flex-1 text-sm p-1" type="email" :value="stepperStore.calcVal('customer_email')" @input="stepperStore.setValue('customer_email', $event.target.value)">
-            <label for="customer_email">Phone</label>
-            <input class="flex-1 text-sm p-1" type="email" :value="stepperStore.calcVal('customer_email')" @input="stepperStore.setValue('customer_email', $event.target.value)">
+            <label for="customer_phone">Phone</label>
+            <input class="flex-1 text-sm p-1" type="email" :value="stepperStore.calcVal('customer_phone')" @input="stepperStore.setValue('customer_phone', $event.target.value)">
             <QuickButton class="flex-1">Submit</QuickButton>
         </div>
     </template>
