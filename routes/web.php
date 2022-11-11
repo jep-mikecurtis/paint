@@ -48,3 +48,7 @@ Route::controller(FormController::class)->group(function() {
 Route::get('/paint/bid', function () {
     return Inertia::render('Application/Paint');
 })->name('paint.bid');
+
+Route::get('/', function () {
+    return Inertia::render('Application/Gospel');
+})->name('gospel');
