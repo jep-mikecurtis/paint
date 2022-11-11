@@ -1,11 +1,19 @@
 <script setup>
 // import defineProps from 'vue'
 import { ref } from "vue";
+import { defineProps } from "vue";
 import { useStepperStore } from "@/Stores/StepperStore";
 import Step from "@/Applications/Gospel/Step.vue";
 const stepperStore = useStepperStore();
 
 let triggerFade = ref(false);
+
+defineProps({
+    name: {
+        type: String,
+        required: false,
+    }
+});
 </script>
 
 <template>
@@ -14,7 +22,7 @@ let triggerFade = ref(false);
     >
         <div class="wrapper flex w-full max-w-2xl">
             <div class="main-card p-4 flex flex-col space-y-4 lg:shadow flex-1 bg-white">
-                <Step />
+                <Step :name="name"/>
             </div>
         </div>
         <button

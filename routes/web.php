@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\FormController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,8 @@ Route::get('/paint/bid', function () {
     return Inertia::render('Application/Paint');
 })->name('paint.bid');
 
-Route::get('/', function () {
-    return Inertia::render('Application/Gospel');
+Route::get('/', function (Request $request) {
+    return Inertia::render('Application/Gospel', [
+        'name' => $request->name,
+    ]);
 })->name('gospel');

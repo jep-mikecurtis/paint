@@ -1,14 +1,25 @@
 <script setup>
+import { defineProps } from "vue";
 import { useStepperStore } from "@/Stores/StepperStore";
 import QuickButton from "@/Components/QuickButton.vue";
 import QuickHeading from "@/Components/QuickHeading.vue";
 const stepperStore = useStepperStore();
+
+defineProps({
+    name: {
+        type: String,
+        required: false,
+    }
+});
 </script>
 
 <template>
     <TransitionGroup name="fade">
         <template v-if="stepperStore.step == 1">
-            <QuickHeading v-if="stepperStore.step == 1">
+            <QuickHeading v-if="name">
+                <span class="capitalize" v-text="name"></span> it looks like someone truly cares about your eternal destination.
+            </QuickHeading>
+            <QuickHeading>
                 If today was your last day on earth are you
                 <br />
                 100% sure you would go to heaven?
