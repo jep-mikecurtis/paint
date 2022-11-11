@@ -64,7 +64,7 @@ const stepperStore = useStepperStore();
     </template>
 
     <template v-if="stepperStore.step == 4">
-        <QuickHeading>4. You must accept the fact that salvation is a free gift, not something earned by good work, baptism, etc.</QuickHeading>
+        <QuickHeading>4. You must accept the fact that salvation is a free gift, not something earned by good works, baptism, etc.</QuickHeading>
         <p>
             Rom. 6:23 For the wages of sin is death; but the gift of God is
             eternal life through Jesus Christ our Lord.
