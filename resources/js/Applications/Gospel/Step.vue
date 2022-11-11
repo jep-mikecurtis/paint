@@ -117,9 +117,17 @@ I know I am a sinner. I know I deserve to go to Hell, but I believe You died for
         <QuickHeading>
             Thats Awesome! Doesn't it feel good to know your going to heaven!
         </QuickHeading>
+
         <p>
             We would love to help you find a church please leave your name and email below.
         </p>
+
+        <div class="flex flex-col space-y-2 text-md">
+            <label for="name">Name</label>
+            <input class="text-sm p-1" required type="text" min="0" :value="stepperStore.calcVal('name')" @input="stepperStore.setValue('name', $event.target.value)"/>
+            <label for="email">Email</label>
+            <input class="text-sm p-1" required type="email" min="0" :value="stepperStore.calcVal('email')" @input="stepperStore.setValue('email', $event.target.value)"/>
+        </div>
     </template>
 
 </template>
