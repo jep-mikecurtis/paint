@@ -17,7 +17,7 @@ defineProps({
     <TransitionGroup name="fade">
         <template v-if="stepperStore.step == 1">
             <QuickHeading v-if="name">
-                <span class="capitalize" v-text="name"></span> it looks like someone truly cares about your eternal destination.
+                <span class="capitalize" v-text="name"></span>, someone truly cares about your eternal destination.
             </QuickHeading>
             <QuickHeading>
                 If today was your last day on earth are you
