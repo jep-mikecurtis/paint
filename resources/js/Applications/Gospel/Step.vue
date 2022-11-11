@@ -109,9 +109,17 @@ I know I am a sinner. I know I deserve to go to Hell, but I believe You died for
             <QuickButton
                 class="flex-1"
                 @click="stepperStore.nextStep('all_have_sinned', true)"
-                >Get Saved!</QuickButton
+                >I Asked Jesus To Save Me!</QuickButton
             >
         </div>
+    </template>
+    <template v-if="stepperStore.step == 7">
+        <QuickHeading>
+            That Awesome! Doesn't it feel good to know your going to heaven!
+        </QuickHeading>
+        <p>
+            We would love to help you find a church please leave your name and email below.
+        </p>
     </template>
 
 </template>
