@@ -27,7 +27,7 @@ defineProps({
             <div class="flex">
                 <QuickButton
                     class="flex-1"
-                    @click="stepperStore.nextStep('know_for_sure', true)"
+                    @click="stepperStore.nextStep('know_for_sure', true, 8)"
                     >Yes</QuickButton
                 >
                 <QuickButton
@@ -100,7 +100,7 @@ defineProps({
 
         <template v-if="stepperStore.step == 5">
             <QuickHeading>
-                Your Eternity Now Hinges On One Decision
+                <span class="capitalize" v-text="name ? name + ', ' : null"></span>  Your Eternity Now Hinges On One Decision
             </QuickHeading>
             <div class="flex">
                 <QuickButton
@@ -140,7 +140,7 @@ defineProps({
 
         <template v-if="stepperStore.step == 7">
             <QuickHeading>
-                Thats Awesome! Doesn't it feel good to know your going to
+                Awesome! Doesn't it feel good to know your going to
                 heaven!
             </QuickHeading>
 
@@ -168,6 +168,38 @@ defineProps({
                     :value="stepperStore.calcVal('email')"
                     @input="stepperStore.setValue('email', $event.target.value)"
                 />
+            </div>
+        </template>
+
+        <template v-if="stepperStore.step == 8">
+            <QuickHeading>
+                That's great! How do you know that you are going to heaven?
+            </QuickHeading>
+
+            <div class="flex flex-col space-y-2">
+                <QuickButton
+                    class="flex-1"
+                    @click="stepperStore.nextStep('all_have_sinned', true, 7)"
+                    >I have put my faith and trust in Jesus</QuickButton
+                >
+                <QuickButton
+                    class="flex-1"
+                    @click="stepperStore.nextStep('all_have_sinned', true, 9)"
+                    >I Am A Good Person</QuickButton
+                >
+            </div>
+        </template>
+        <template v-if="stepperStore.step == 9">
+            <QuickHeading>
+                Unfortunately, being a good person will not get you into heaven. Would you like to learn how to go to heaven?
+            </QuickHeading>
+
+            <div class="flex flex-col space-y-2">
+                <QuickButton
+                    class="flex-1"
+                    @click="stepperStore.nextStep('all_have_sinned', true, 2)"
+                    >Continue</QuickButton
+                >
             </div>
         </template>
     </TransitionGroup>
