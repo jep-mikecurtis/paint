@@ -80,15 +80,15 @@ export const useStepperStore = defineStore("paint", {
             return this.formatMoney(sqFtPrice * this.json['sqft'], 0);
         },
 
-        async submit() {
-            const data = JSON.stringify(this.json);
-            const response = await axios.post('/api/application', {application: data, id: this.id});
-            const json = await response.data;
+        // async submit() {
+        //     const data = JSON.stringify(this.json);
+        //     const response = await axios.post('/api/application', {application: data, id: this.id});
+        //     const json = await response.data;
 
-            if(json) {
-                this.id = json.id;
-                this.json = JSON.parse(json.application);
-            }
-        }
+        //     if(json) {
+        //         this.id = json.id;
+        //         this.json = JSON.parse(json.application);
+        //     }
+        // }
     },
 });
