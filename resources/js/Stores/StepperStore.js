@@ -21,7 +21,7 @@ export const useStepperStore = defineStore("paint", {
 
         async nextStep(key, value, step = null) {
             this.json[key] = value
-            await this.submit();
+            // await this.submit();
             this.setHistory(this.step);
             this.step = step ? step : this.step + 1;
         },
