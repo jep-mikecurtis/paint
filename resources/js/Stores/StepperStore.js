@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import axios from "axios";
 
 export const useStepperStore = defineStore("paint", {
     state: () => ({
@@ -7,6 +8,7 @@ export const useStepperStore = defineStore("paint", {
         json: {},
         interiorGallon: 350,
         exteriorGallon: 320,
+        id: null
     }),
     getters: {
 
@@ -17,11 +19,10 @@ export const useStepperStore = defineStore("paint", {
             this.step = step ? step : this.step + 1;
         },
 
-        nextStep(key, value, step = null) {
+        async nextStep(key, value, step = null) {
             this.json[key] = value
+            await this.submit();
             this.setHistory(this.step);
-
-
             this.step = step ? step : this.step + 1;
         },
 
@@ -77,6 +78,17 @@ export const useStepperStore = defineStore("paint", {
             const sqFtPrice = base + ceiling + trim;
 
             return this.formatMoney(sqFtPrice * this.json['sqft'], 0);
+        },
+
+        async submit() {
+            const data = JSON.stringify(this.json);
+            const response = await axios.post('/api/application', {application: data, id: this.id});
+            const json = await response.data;
+
+            if(json) {
+                this.id = json.id;
+                this.json = JSON.parse(json.application);
+            }
         }
     },
 });

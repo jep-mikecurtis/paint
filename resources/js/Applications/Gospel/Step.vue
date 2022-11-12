@@ -168,7 +168,21 @@ defineProps({
                     :value="stepperStore.calcVal('email')"
                     @input="stepperStore.setValue('email', $event.target.value)"
                 />
+                <label for="email">Zip Code</label>
+                <input
+                    class="text-sm p-1"
+                    required
+                    type="email"
+                    min="0"
+                    :value="stepperStore.calcVal('zip')"
+                    @input="stepperStore.setValue('zip', $event.target.value)"
+                />
             </div>
+
+            <QuickButton
+                class="flex-1"
+                @click="stepperStore.nextStep('submit', true, 10)"
+                >Submit</QuickButton>
         </template>
 
         <template v-if="stepperStore.step == 8">
@@ -201,6 +215,11 @@ defineProps({
                     >Continue</QuickButton
                 >
             </div>
+        </template>
+        <template v-if="stepperStore.step == 10">
+            <QuickHeading>
+                We will email a list of churches to you soon!
+            </QuickHeading>
         </template>
     </TransitionGroup>
 </template>

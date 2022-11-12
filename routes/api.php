@@ -17,3 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('application', function (Request $request) {
+    $id = $request->id;
+
+    if($id) {
+        $application = \App\Models\Application::find($id);
+        $application->application = $request->application;
+        $application->save();
+    } else {
+        $application = \App\Models\Application::create([
+            'application' => $request->application,
+            'ip_address' => $request->ip(),
+        ]);
+    }
+
+    return $application;
+});
