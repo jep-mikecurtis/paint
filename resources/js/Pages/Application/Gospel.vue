@@ -4,9 +4,8 @@ import { ref } from "vue";
 import { defineProps } from "vue";
 import { useStepperStore } from "@/Stores/StepperStore";
 import Step from "@/Applications/Gospel/Step.vue";
+import Layout from '@/Layouts/Layout.vue';
 const stepperStore = useStepperStore();
-
-let triggerFade = ref(false);
 
 defineProps({
     name: {
@@ -17,21 +16,23 @@ defineProps({
 </script>
 
 <template>
-    <div
-        class="flex flex-col space-y-4 items-center justify-center pt-10 lg:p-20"
-    >
-        <div class="wrapper flex w-full max-w-2xl">
-            <div class="main-card p-4 flex flex-col space-y-4 lg:shadow flex-1 bg-white">
-                <Step :name="name"/>
-            </div>
-        </div>
-        <button
-            v-if="stepperStore.history.length"
-            @click="stepperStore.goBack()"
+    <Layout>
+        <div
+            class="flex flex-col space-y-4 items-center justify-center pt-10 lg:p-20"
         >
-            Back
-        </button>
-    </div>
+            <div class="wrapper flex w-full max-w-2xl">
+                <div class="main-card p-4 flex flex-col space-y-4 lg:shadow flex-1 bg-white">
+                    <Step :name="name"/>
+                </div>
+            </div>
+            <button
+                v-if="stepperStore.history.length"
+                @click="stepperStore.goBack()"
+            >
+                Back
+            </button>
+        </div>
+    </Layout>
 </template>
 
 <style scoped>
