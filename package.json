@@ -17,6 +17,7 @@
         "@vue/server-renderer": "^3.2.31",
         "autoprefixer": "^10.4.7",
         "axios": "^1.1.2",
+        "daisyui": "^2.42.1",
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
         "pinia": "^2.0.23",
