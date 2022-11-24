@@ -3,13 +3,11 @@
         <div class="navbar bg-base-100 flex justify-center">
             <a class="btn btn-ghost normal-case text-xl">Will You Go?</a>
         </div>
-        <div class="flex-1" style="min-height: 33rem">
+        <div class="flex-1" style="min-height: 32rem">
             <slot />
         </div>
         <footer class="footer items-center p-4 bg-neutral text-neutral-content">
-            <div class="items-center grid-flow-col">
-                <p class="bg-black text-white text-4xl p-4 rounded">KJV</p>
-            </div>
+
             <div
                 class="grid-flow-col gap-4 md:place-self-center md:justify-self-end"
             >
