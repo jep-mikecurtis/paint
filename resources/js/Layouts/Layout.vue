@@ -3,7 +3,7 @@
         <div class="navbar bg-base-100 flex justify-center">
             <a class="btn btn-ghost normal-case text-xl">Will You Go?</a>
         </div>
-        <div class="flex-1" style="min-height: 32rem">
+        <div class="flex-1" >
             <slot />
         </div>
         <footer class="footer items-center p-4 bg-neutral text-neutral-content">
