@@ -21,7 +21,7 @@ defineProps({
             class="flex flex-col space-y-4 items-center justify-center lg:pt-10 lg:p-10 py-5"
         >
             <div class="wrapper flex w-full max-w-2xl">
-                <div class="main-card p-4 flex flex-col space-y-4 lg:shadow flex-1 bg-white">
+                <div class="main-card p-4 flex flex-col space-y-4 lg:shadow flex-1">
                     <Step :name="name"/>
                 </div>
             </div>
