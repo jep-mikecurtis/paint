@@ -18,16 +18,17 @@ defineProps({
 <template>
     <Layout>
         <div
-            class="flex flex-col space-y-4 items-center justify-center lg:pt-10 lg:p-10 py-5"
+            class="flex-1 flex flex-col items-center lg:justify-start justify-between lg:pt-10 lg:p-10 py-5"
         >
-            <div class="wrapper flex w-full max-w-2xl">
-                <div class="main-card p-4 flex flex-col space-y-4 lg:shadow flex-1">
+            <div class="wrapper w-full max-w-2xl flex justify-center">
+                <div class="main-card p-4 flex flex-col space-y-4">
                     <Step :name="name"/>
                 </div>
             </div>
             <button
                 v-if="stepperStore.history.length"
                 @click="stepperStore.goBack()"
+                class="border-b-2 border-dashed border-gray-800"
             >
                 Back
             </button>
