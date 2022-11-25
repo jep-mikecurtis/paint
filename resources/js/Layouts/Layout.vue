@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col screen ">
+    <div class="flex flex-col screen">
         <div class="navbar bg-base-100 flex justify-center">
             <a class="btn btn-ghost normal-case text-xl">Will You Go?</a>
         </div>
@@ -54,8 +54,8 @@
 
 <style >
 .screen {
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-  min-height: -webkit-fill-available;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
 }
 </style>
