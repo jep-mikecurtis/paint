@@ -180,7 +180,6 @@ defineProps({
             </div>
 
             <QuickButton
-                class="flex-1"
                 @click="stepperStore.nextStep('submit', true, 10)"
                 >Submit</QuickButton>
         </template>
