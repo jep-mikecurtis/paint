@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex flex-col">
+    <div class="flex flex-col screen ">
         <div class="navbar bg-base-100 flex justify-center">
             <a class="btn btn-ghost normal-case text-xl">Will You Go?</a>
         </div>
@@ -7,7 +7,6 @@
             <slot />
         </div>
         <footer class="footer items-center p-4 bg-neutral text-neutral-content">
-
             <div
                 class="grid-flow-col gap-4 md:place-self-center md:justify-self-end"
             >
@@ -52,3 +51,10 @@
         </footer>
     </div>
 </template>
+
+<style >
+.screen {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+</style>
